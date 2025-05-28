@@ -82,16 +82,3 @@ Contributions are welcome! Please feel free to submit pull requests.
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Citation
-If you use this work in your research, please cite:
-```
-@software{vec_optimizer,
-  title = {VEC-Optimizer: Intelligent Task Offloading for Vehicle Edge Computing},
-  year = {2024},
-  author = {Your Name},
-  url = {https://github.com/yourusername/vec-optimizer}
-}
-```
-
-## Contact
-For questions or feedback, please open an issue or contact [your contact information]. 
