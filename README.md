@@ -1,89 +1,97 @@
-# Vehicle Edge Computing (VEC) with DDPG
+# VEC-Optimizer: Intelligent Task Offloading for Vehicle Edge Computing
 
-This project implements a Deep Deterministic Policy Gradient (DDPG) approach for optimizing task offloading and service caching in a Vehicle Edge Computing environment.
+## Overview
+VEC-Optimizer is an advanced simulation and optimization framework for Vehicle Edge Computing (VEC) environments. It implements intelligent task offloading strategies using Deep Deterministic Policy Gradient (DDPG) to optimize processing time, energy consumption, and resource utilization in vehicular networks.
+
+## Features
+- **Intelligent Task Offloading**: Uses DDPG-based reinforcement learning for optimal task distribution
+- **Multi-objective Optimization**: Balances processing time, energy consumption, and resource utilization
+- **Real-time Visualization**: Interactive dashboard for monitoring system performance
+- **Flexible Architecture**: Supports various vehicle configurations and task scenarios
+- **Performance Analytics**: Comprehensive metrics and visualization tools
 
 ## Project Structure
-
 ```
-.
-├── ddpg_model/          # DDPG implementation
-│   └── ddpg.py         # DDPG agent implementation
-├── environment/         # Environment implementation
-│   └── vec_env.py      # VEC environment
-├── results/            # Trained models and metrics
-├── main.py            # Main simulation script
-├── train_model.py     # Training script
-└── requirements.txt   # Project dependencies
+VEC-Optimizer/
+├── actor_critic_model/     # DDPG implementation
+├── environment/            # VEC simulation environment
+├── utils/                 # Utility functions and metrics
+├── dashboard.py           # Interactive visualization dashboard
+├── main.py               # Main simulation runner
+└── requirements.txt      # Project dependencies
 ```
 
-## Environment Parameters
+## Installation
 
-🚗 Vehicles
-- Density: 2-5 vehicles per edge node
-- Storage capacity: 50 MB
-- CPU frequency: 5×10⁸ cycles/s
+1. Create and activate a virtual environment:
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\\Scripts\\activate
+```
 
-🖥️ Edge Servers
-- Number of servers: 3
-- Communication range: 500 meters
-- Bandwidth: 20 MHz
-- Storage capacity: 100 MB
-- CPU frequency: 1×10⁹ cycles/s
-
-🧠 Caching & Computation
-- Service programs: 5
-- Service program size: 50 MB
-- Task input size: 20 MB
-- Computation intensity: 10⁵ cycles/bit
-- Edge-to-edge rate: 15 Mbps
-- Edge-to-cloud rate: 10 Mbps
-- Edge power: 1 W
-- Cloud power: 2 W
-- Energy efficiency: 1×10⁻²⁶
-
-⏱️ Simulation
-- Time slots: 40
-- Slot duration: 30 seconds
-- One task per vehicle per time slot
-
-## DDPG Parameters
-
-- Actor learning rate: 0.001
-- Critic learning rate: 0.002
-- Replay buffer size: 10,000
-- Mini-batch size: 128
-- Discount factor (γ): 0.99
-- Soft update (τ): 0.01
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
 ## Usage
 
-1. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Running the Simulation
+```bash
+python main.py
+```
 
-2. Train the model:
-   ```bash
-   python train_model.py
-   ```
-   This will train the DDPG model and save it in the `results/trained_model` directory.
+### Viewing Results Dashboard
+```bash
+streamlit run dashboard.py
+```
 
-3. Run simulation:
-   ```bash
-   python main.py
-   ```
-   Enter the number of vehicles when prompted (2-15) to run the simulation.
+## Dashboard Features
+- Real-time performance monitoring
+- Task distribution visualization
+- Energy consumption analysis
+- Cache performance metrics
+- Vehicle load distribution
+
+## Performance Metrics
+- Task Processing Time
+- Energy Consumption
+- Resource Utilization
+- Offloading Distribution
+  - Local Execution
+  - Edge Server Execution
+  - Edge Pool Distribution
+
+## Requirements
+- Python 3.8+
+- PyTorch
+- Streamlit
+- Plotly
+- Additional dependencies in requirements.txt
 
 ## Results
+The system demonstrates effective task offloading with:
+- Optimized processing times
+- Reduced energy consumption
+- Balanced resource utilization
+- Adaptive task distribution based on network conditions
 
-The training process generates:
-- Best model weights (`ddpg_best.pth`)
-- Training metrics plot (`training_metrics.png`)
-- Environment parameters (`env_params.json`)
+## Contributing
+Contributions are welcome! Please feel free to submit pull requests.
 
-The simulation shows:
-- Real-time task execution details
-- Final statistics including:
-  - Task offloading decisions
-  - Processing delays
-  - Energy consumption 
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Citation
+If you use this work in your research, please cite:
+```
+@software{vec_optimizer,
+  title = {VEC-Optimizer: Intelligent Task Offloading for Vehicle Edge Computing},
+  year = {2024},
+  author = {Your Name},
+  url = {https://github.com/yourusername/vec-optimizer}
+}
+```
+
+## Contact
+For questions or feedback, please open an issue or contact [your contact information]. 
