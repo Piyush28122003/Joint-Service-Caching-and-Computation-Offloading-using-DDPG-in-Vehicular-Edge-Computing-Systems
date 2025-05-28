@@ -1,4 +1,5 @@
-# VEC-Optimizer: Intelligent Task Offloading for Vehicle Edge Computing
+# 🚗 Joint Service Caching and Computation Offloading using DDPG in Vehicular Edge Computing Systems
+
 
 ## Overview
 VEC-Optimizer is an advanced simulation and optimization framework for Vehicle Edge Computing (VEC) environments. It implements intelligent task offloading strategies using Deep Deterministic Policy Gradient (DDPG) to optimize processing time, energy consumption, and resource utilization in vehicular networks.
